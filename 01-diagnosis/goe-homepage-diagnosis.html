@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gowns of Encouragement — Homepage Conversion Diagnosis</title>
+<style>
+  :root{
+    --bg:#16130f; --panel:#201b16; --panel2:#2a231c; --line:#3a3129;
+    --text:#efe7dc; --muted:#b4a796; --gold:#e9c46a; --gold2:#f3d98e;
+    --red:#e07a5f; --amber:#e9c46a; --green:#8fbf8a; --blue:#8fb3d9;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 "Segoe UI",system-ui,-apple-system,sans-serif}
+  .wrap{max-width:1040px;margin:0 auto;padding:48px 24px 80px}
+  header{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:36px}
+  .eyebrow{color:var(--gold);letter-spacing:.18em;text-transform:uppercase;font-size:12px;font-weight:600}
+  h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:40px;line-height:1.15;margin:10px 0 12px}
+  h1 em{color:var(--gold);font-style:italic}
+  h2{font-family:Georgia,serif;font-weight:400;font-size:28px;margin:56px 0 8px}
+  h3{font-size:17px;margin:0 0 6px}
+  p.lead{color:var(--muted);max-width:760px;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .chip{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--muted)}
+  .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .stat b{display:block;font-family:Georgia,serif;font-weight:400;font-size:30px;color:var(--gold2)}
+  .stat span{font-size:13px;color:var(--muted)}
+  .section-note{color:var(--muted);margin:0 0 18px}
+  table{width:100%;border-collapse:separate;border-spacing:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  th,td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--line)}
+  th{background:var(--panel2);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  tr:last-child td{border-bottom:none}
+  td:first-child{width:38%}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:6px;padding:2px 8px;margin-bottom:6px}
+  .t-critical{background:rgba(224,122,95,.16);color:var(--red)}
+  .t-high{background:rgba(233,196,106,.16);color:var(--amber)}
+  .t-medium{background:rgba(143,179,217,.16);color:var(--blue)}
+  .t-park{background:rgba(180,167,150,.14);color:var(--muted)}
+  .t-new{background:rgba(143,191,138,.16);color:var(--green)}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  .card.keep{border-left:3px solid var(--green)}
+  ol.prio{counter-reset:p;list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  ol.prio li{counter-increment:p;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 60px;position:relative}
+  ol.prio li::before{content:counter(p);position:absolute;left:16px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#1b160f;font-weight:700;display:grid;place-items:center}
+  ol.prio li span{display:block;color:var(--muted);font-size:14px}
+  .callout{background:linear-gradient(135deg,rgba(233,196,106,.10),rgba(233,196,106,.02));border:1px solid rgba(233,196,106,.35);border-radius:14px;padding:18px 20px;margin-top:18px}
+  .callout p{margin:0}
+  a{color:var(--gold2)}
+  footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+  @media (max-width:760px){
+    h1{font-size:30px}
+    .summary{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr}
+    table,thead,tbody,tr,th,td{display:block}
+    thead{display:none}
+    td{border-bottom:none;padding:10px 16px}
+    td:first-child{width:auto;padding-top:16px}
+    tr{border-bottom:1px solid var(--line)}
+  }
+  @media print{
+    body{background:#fff;color:#111}
+    .stat,.card,table,ol.prio li{background:#fff;border-color:#ccc}
+    th{background:#f3f0ea;color:#555}
+    .card p,ol.prio li span,p.lead,.section-note{color:#444}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Homepage conversion diagnosis</div>
+  <h1>Gowns of Encouragement — <em>what to keep, what to fix</em></h1>
+  <p class="lead">A review of the visible elements of the gownsofencouragement.net homepage, done at desktop and phone sizes. The site is treated as pre-launch, so it covers only what a visitor sees on this page, not where the links and buttons lead.</p>
+  <div class="meta">
+    <span class="chip">Reviewed 13–14 Nov 2026</span>
+    <span class="chip">Desktop + 375px mobile</span>
+    <span class="chip">7 products · Standard $150 / Glow $199</span>
+  </div>
+</header>
+
+<div class="summary">
+  <div class="stat"><b>~19 MB</b><span>of images on the page (12 JPEGs at 0.6–3.7 MB each)</span></div>
+  <div class="stat"><b>~20,000px</b><span>page length on a phone</span></div>
+  <div class="stat"><b>~850px</b><span>height of each product card on a phone</span></div>
+  <div class="stat"><b>13+</b><span>competing calls to action, plus 3 separate forms</span></div>
+</div>
+
+<h2>Findings that still stand</h2>
+<p class="section-note">Every item here is visible on the homepage itself.</p>
+<table>
+  <thead><tr><th>Finding</th><th>Why it matters / what to do</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><span class="tag t-critical">Critical</span><h3>Invented reviews and unsupported claims</h3>"4.98 / 5.0", "Verified Google Reviews", "30,000+ 5-Star Reviews", review cards naming products not in the catalog (Warm Champagne Glow Throw, Caramel Encouragement Throw, Custom Glow Weighted Throw), "patented softness", "Zero Shed 100%".</td>
+      <td>These are printed on the page, and the time to remove them is before launch. Under the FTC's fake-review rule (in effect since 21 Oct 2024), fake or AI-generated testimonials can draw civil penalties. Replace them with real Google reviews, even a few, or a "Be one of our first customers" block. Keep only claims you can back up.</td>
+    </tr>
+    <tr>
+      <td><span class="tag t-critical">Critical</span><h3>Page weight of about 19 MB</h3>Twelve 1024px JPEGs, none of them waiting to load until you scroll. The hero image alone is 2–4 MB.</td>
+      <td>On mobile data the page may never finish loading. Convert to WebP or AVIF at about 100–200 KB each, size images to how they're shown, and lazy-load everything below the first screen. Target: under 2 MB in total.</td>
+    </tr>
+    <tr>
+      <td><span class="tag t-high">High</span><h3>Footer lists products you don't sell</h3>Glow Weighted Blankets, Gift Cards &amp; Packaging, Event Lounge Accessories.</td>
+      <td>The labels alone promise items that aren't in the catalog. List only the 7 throws, custom orders and corporate gifting.</td>
+    </tr>
+    <tr>
+      <td><span class="tag t-high">High</span><h3>Bag icon shows "1" on first visit</h3>The code pre-loads an item that isn't one of your products.</td>
+      <td>It's visible in the header the moment the page loads, and makes the page look broken or pre-filled. It's a quick fix: start with an empty bag.</td>
+    </tr>
+    <tr>
+      <td><span class="tag t-high">High</span><h3>Mobile header too tall, and Shop Now below the first screen</h3>The header takes about 180px (logo, two-line name, tagline). The buttons sit at about 890px on an 812px screen.</td>
+      <td>Shrink the header to about 64px (small logo, one-line name, bag icon). Put the headline, price and Shop button on the first screen.</td>
+    </tr>
+    <tr>
+      <td><span class="tag t-high">High</span><h3>Hero image before the headline on phones</h3>The first screen is an image with no message or button.</td>
+      <td>Put the headline and button first, or lay them over the image.</td>
+    </tr>
+    <tr>
+      <td><span class="tag t-high">High</span><h3>No real glow photo or video, and the hero shows a product you don't sell</h3>The hero blanket is teal, which isn't one of your colours, and looks AI-generated.</td>
+      <td>The glow is the whole reason to buy. Use a real photo of a catalog throw, plus a 5–8 second lights-off video. Keep the Day / Night toggle, fed by real photos.</td>
+    </tr>
+    <tr>
+      <td><span class="tag t-high">High</span><h3>Product cards about 850px tall, with repeated blocks</h3>The same finish picker and embroidery paragraph appear 7 times.</td>
+      <td>Use a compact grid of photo, glow toggle, name, texture, "From $150" and Add, 2 columns on phones. Say once, above the grid, that embroidery is available.</td>
+    </tr>
+    <tr>
+      <td><span class="tag t-medium">Medium</span><h3>Unexplained crossed-out prices</h3>$175, $180 or $185 next to $150, varying by card.</td>
+      <td>It reads as a fake discount. Either label it ("Launch price") or remove it.</td>
+    </tr>
+    <tr>
+      <td><span class="tag t-medium">Medium</span><h3>FAQ hidden in a tap-to-expand tile</h3>Four tiles (Story, Mission, FAQ, Reviews/Follow) also reuse the same two images.</td>
+      <td>Show the 5–6 questions that block a purchase: how long the glow lasts, how to charge it, washing, size, shipping time, returns.</td>
+    </tr>
+    <tr>
+      <td><span class="tag t-medium">Medium</span><h3>The mission is buried</h3>"Every blanket gifts a gown to a patient" sits in a small tile.</td>
+      <td>It's the strongest emotional reason to buy and it explains the brand name. Put it near the hero and above the product grid.</td>
+    </tr>
+    <tr>
+      <td><span class="tag t-medium">Medium</span><h3>Weak corporate gifting section</h3>No quantities, no per-item price, no example.</td>
+      <td>Give it its own band with "from $X each at 25+", turnaround time, one real example, a short form and the founder's phone number.</td>
+    </tr>
+    <tr>
+      <td><span class="tag t-medium">Medium</span><h3>The 15% email signup sits only in the footer</h3></td>
+      <td>Give it its own band mid-page, and consider a timed popup.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>New findings from looking only at the visible page</h2>
+<table>
+  <thead><tr><th>Finding</th><th>What to do</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><span class="tag t-new">New</span><h3>The Custom Builder repeats the product grid</h3>It offers the same 7 shades and the same 2 finishes.</td>
+      <td>Shoppers make the same choice twice. Either merge it into the grid or make it about what the grid can't do: custom wording, colours and gift messages.</td>
+    </tr>
+    <tr>
+      <td><span class="tag t-new">New</span><h3>Too many competing calls to action</h3>7 × "Request a custom embroidery consultation", 3 × "Inquire Now", plus 3 forms (contact, services, newsletter).</td>
+      <td>Cut it to one main action (Shop the throws) and one secondary action (Custom &amp; corporate enquiry), with one contact form.</td>
+    </tr>
+    <tr>
+      <td><span class="tag t-new">New</span><h3>The shipping promises don't match</h3>The builder says "Free Express Shipping", the footer says "In Stock &amp; Shipping Daily", and the product cards say nothing.</td>
+      <td>Pick one honest line and show it in a proof bar under the hero.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Keep — these are working</h2>
+<div class="grid">
+  <div class="card keep"><h3>Day / Night glow toggle</h3><p>The best idea on the page because it shows the product's one unique feature. Make it the centerpiece.</p></div>
+  <div class="card keep"><h3>Headline and subhead</h3><p>"Wrapped in encouragement, lit from within." is clear and on-brand, and the subhead says plainly what the product is.</p></div>
+  <div class="card keep"><h3>Dark, warm, upscale style</h3><p>It suits a glow product. Keep the palette and serif headings.</p></div>
+  <div class="card keep"><h3>Two-tier pricing</h3><p>Standard $150 or Glow $199. Two choices is easy.</p></div>
+  <div class="card keep"><h3>Texture filter chips</h3><p>Useful even with 7 products, and they scale as the catalog grows.</p></div>
+  <div class="card keep"><h3>Founder access</h3><p>Jinetta by name, phone and text, and hours. That builds trust for a $150–$199 handmade item and for bulk buyers.</p></div>
+  <div class="card keep"><h3>100-night guarantee</h3><p>Strong reassurance. Show it in the proof bar if the policy is real.</p></div>
+  <div class="card keep"><h3>The mission</h3><p>A gown gifted to a patient for every blanket. Keep it and move it up.</p></div>
+</div>
+
+<h2>Moved to the pre-launch checklist</h2>
+<p class="section-note">These are out of scope for the homepage design, but must be done before go-live.</p>
+<table>
+  <thead><tr><th>Item</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td><span class="tag t-park">Parked</span><h3>Checkout is simulated</h3></td><td>"Thank You for Your Order" appears with no payment, address or email. Connect real checkout (Shopify, or Stripe Checkout or Payment Links) before launch.</td></tr>
+    <tr><td><span class="tag t-park">Parked</span><h3>Bag drawer details</h3></td><td>The promo code is shown to everyone, and the drawer runs off the right edge on phones.</td></tr>
+    <tr><td><span class="tag t-park">Parked</span><h3>Form delivery</h3></td><td>Send yourself a test of each form to confirm the messages arrive.</td></tr>
+    <tr><td><span class="tag t-park">Parked</span><h3>SEO and sharing settings</h3></td><td>The canonical tag points to getgownsofencouragement.com. There's no product schema and no share image.</td></tr>
+    <tr><td><span class="tag t-park">Parked</span><h3>Tracking</h3></td><td>GA4 and a Meta pixel with add-to-bag, checkout and lead events.</td></tr>
+    <tr><td><span class="tag t-park">Parked</span><h3>Social icon links</h3></td><td>The header icons point to the bare instagram.com and facebook.com homepages.</td></tr>
+  </tbody>
+</table>
+
+<h2>Priority order for the homepage</h2>
+<ol class="prio">
+  <li>Remove the invented reviews and unsupported claims<span>Real reviews only, footer cleaned up, one honest shipping line.</span></li>
+  <li>Cut image weight and fix the mobile first screen<span>Under 2 MB in total; 64px header; headline, price and Shop button on the first screen.</span></li>
+  <li>Rebuild the product area as a compact grid<span>Merge or reposition the builder; explain or remove the crossed-out prices.</span></li>
+  <li>Add real glow photos and video, plus a proof bar<span>Guarantee, shipping, handmade in Georgia, gift-ready.</span></li>
+  <li>Move the mission, FAQ and email capture higher<span>Mission beside the products, FAQ open on the page, signup as its own band.</span></li>
+  <li>Reduce the calls to action and strengthen corporate gifting<span>Shop plus one enquiry path; bulk pricing, an example and one form.</span></li>
+</ol>
+
+<div class="callout">
+  <p><strong>Proposed page order:</strong> slim header → hero (headline, price, Shop button, glow toggle) → proof bar → mission strip → product grid with texture filters → day/night glow demo or video → real reviews → custom &amp; corporate gifting → FAQ → email signup → footer.</p>
+</div>
+
+<footer>
+  Source on the review rule: <a href="https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials">FTC – Final rule banning fake reviews and testimonials</a>. This is not legal advice.
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gowns of Encouragement — Homepage (phone)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Parisienne&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#f0d389}a:hover{color:#ffe7ad}
+input{font:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 3000px; box-sizing: border-box; overflow: hidden; font-family: 'DM Sans', system-ui, sans-serif; color: #f1e9dd; background: #17130f">
+
+  <div style="background: {{accent}}; color: #1b160f; text-align: center; font-size: 12px; font-weight: 600; padding: 8px 12px">Holiday gifting: order by [DATE] for Christmas</div>
+
+  <header style="height: 64px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #3a3027">
+    <button type="button" aria-label="Open menu" style="width: 44px; height: 44px; background: transparent; border: none; color: #f1e9dd; display: flex; align-items: center; justify-content: center; padding: 0">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+    </button>
+    <span style="display: flex; align-items: center; gap: 8px"><img src="/_blob/3c36ccd05e99072b0bcf137060b66fc3" alt="Gowns of Encouragement logo" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover"><span style="font-family: 'Playfair Display', serif; font-size: 17px">Gowns of Encouragement</span></span>
+    <button type="button" aria-label="Bag, {{bag}} items" style="width: 44px; height: 44px; background: transparent; border: none; color: #f1e9dd; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 0; font-size: 13px">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg>{{bag}}
+    </button>
+  </header>
+
+  <section style="padding: 28px 20px 20px; display: flex; flex-direction: column; gap: 14px">
+    <div style="color: {{accent}}; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600">Glow-in-the-dark plush throws</div>
+    <h1 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 36px; line-height: 1.1">Wrapped in encouragement, <em style="color: {{accent}}">lit from within.</em></h1>
+    <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #cfc2b0">Ultra-soft throws with a message that glows softly after dark. Handmade in Georgia.</p>
+    <div style="display: flex; align-items: baseline; gap: 10px"><span style="font-family: 'Playfair Display', serif; font-size: 24px">From $150</span><span style="color: #b9ab98; font-size: 14px">Glow finish $199</span></div>
+    <a href="#shop" style="min-height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: {{accent}}; color: #1b160f; font-weight: 700; font-size: 16px; text-decoration: none">Shop the throws</a>
+  </section>
+
+  <div style="position: relative; margin: 0 20px">
+    <div style="aspect-ratio: 1 / 1; border-radius: 18px; overflow: hidden; position: relative; background: #0f0c0a; border: 1px solid #3a3027">
+          <sc-if value="{{isDay}}" hint-placeholder-val="{{ true }}"><img src="/_blob/7916db4f8b4cd7a15fd2930226fa9d04" alt="Woman reading on a sofa wrapped in an ivory Stay Encouraged throw" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+          <sc-if value="{{isNight}}" hint-placeholder-val="{{ false }}"><img src="/_blob/c3e25ffad548c2d323bb030fe97d3e3f" alt="The same scene at night with the Stay Encouraged message glowing" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+        </div>
+    <div role="group" aria-label="Show by day or glowing" style="position: absolute; top: 10px; right: 10px; display: flex; background: rgba(20,16,12,0.85); border: 1px solid #5a4a36; border-radius: 999px; padding: 3px">
+      <button type="button" aria-pressed="{{dayPressed}}" onClick="{{setDay}}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; border: none; font-weight: 600; font-size: 13px; {{dayBtn}}">Day</button>
+      <button type="button" aria-pressed="{{nightPressed}}" onClick="{{setNight}}" style="min-height: 44px; padding: 0 14px; border-radius: 999px; border: none; font-weight: 600; font-size: 13px; {{nightBtn}}">Glow</button>
+    </div>
+  </div>
+
+  <section aria-label="Why shop with us" style="margin: 20px 20px 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+    <div style="background: #211b15; border: 1px solid #3a3027; border-radius: 12px; padding: 12px; font-size: 13px"><div style="font-weight: 600">100-night trial</div><div style="color: #b9ab98">Love it or return it</div></div>
+    <div style="background: #211b15; border: 1px solid #3a3027; border-radius: 12px; padding: 12px; font-size: 13px"><div style="font-weight: 600">[Shipping promise]</div><div style="color: #b9ab98">[Ships in X days]</div></div>
+    <div style="background: #211b15; border: 1px solid #3a3027; border-radius: 12px; padding: 12px; font-size: 13px"><div style="font-weight: 600">Handmade</div><div style="color: #b9ab98">Alpharetta, Georgia</div></div>
+    <div style="background: #211b15; border: 1px solid #3a3027; border-radius: 12px; padding: 12px; font-size: 13px"><div style="font-weight: 600">Gift-ready</div><div style="color: #b9ab98">Gift note at checkout</div></div>
+  </section>
+
+  <section style="margin: 20px 20px 0; background: #211b15; border: 1px solid #3a3027; border-radius: 14px; padding: 16px; display: flex; gap: 12px; align-items: flex-start">
+    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8c26a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 2px"><path d="M12 21s-7-4.4-9.3-9A5.2 5.2 0 0 1 12 6.2 5.2 5.2 0 0 1 21.3 12C19 16.6 12 21 12 21Z"></path></svg>
+    <p style="margin: 0; font-size: 15px; line-height: 1.5">Every throw gifts an encouraging gown to a patient in a children's hospital or senior care.</p>
+  </section>
+
+  <section id="shop" style="padding: 36px 20px 0">
+    <h2 style="margin: 0 0 6px; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px">The Glow Collection</h2>
+    <p style="margin: 0 0 16px; color: #cfc2b0; font-size: 14px">Seven textures · $150, or $199 with glow · 50″ × 70″</p>
+    <div role="group" aria-label="Filter by texture" style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; margin: 0 -20px 16px; padding-left: 20px; padding-right: 20px">
+      <sc-for list="{{chips}}" as="chip" hint-placeholder-count="6">
+        <button type="button" aria-pressed="{{chip.pressed}}" onClick="{{chip.pick}}" style="flex: none; min-height: 44px; padding: 0 16px; border-radius: 999px; font-size: 14px; font-weight: 500; {{chip.style}}">{{chip.label}}</button>
+      </sc-for>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+      <sc-if value="{{show.black}}" hint-placeholder-val="{{ true }}">
+        <article style="background: #211b15; border: 1px solid #3a3027; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+          <div style="aspect-ratio: 4 / 5; position: relative; overflow: hidden; background: #0f0c0a">
+            <sc-if value="{{isDay}}" hint-placeholder-val="{{ true }}"><img src="/_blob/15e4ee6022d3f342edcad659b84786d1" alt="Black Herringbone throw with Stay Encouraged embroidery" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+            <sc-if value="{{isNight}}" hint-placeholder-val="{{ false }}"><img src="/_blob/05cc45ccfc5c0f047487c7965c34ca4f" alt="Black Herringbone throw, message glowing in the dark" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+          </div>
+          <div style="padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; flex: 1">
+            <div style="color: {{accent}}; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Herringbone</div>
+            <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 15px; line-height: 1.3">Black Herringbone</h3>
+            <div style="font-size: 13px; color: #cfc2b0">$150 · Glow $199</div>
+            <button type="button" onClick="{{addOne}}" style="margin-top: 6px; min-height: 44px; border-radius: 999px; border: 1px solid #6b5a43; background: transparent; color: #f1e9dd; font-weight: 600; font-size: 14px; cursor: pointer">Choose</button>
+          </div>
+        </article>
+      </sc-if>
+      <sc-if value="{{show.charcoal}}" hint-placeholder-val="{{ true }}">
+        <article style="background: #211b15; border: 1px solid #3a3027; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+          <div style="aspect-ratio: 4 / 5; position: relative; overflow: hidden; background: #0f0c0a">
+            <sc-if value="{{isDay}}" hint-placeholder-val="{{ true }}"><img src="/_blob/31990c8d64c62f144195b27cf263aed5" alt="Dark Charcoal Herringbone throw with Stay Encouraged embroidery" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+            <sc-if value="{{isNight}}" hint-placeholder-val="{{ false }}"><img src="/_blob/05cc45ccfc5c0f047487c7965c34ca4f" alt="Dark Charcoal Herringbone throw, message glowing in the dark" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+          </div>
+          <div style="padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; flex: 1">
+            <div style="color: {{accent}}; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Herringbone</div>
+            <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 15px; line-height: 1.3">Dark Charcoal Herringbone</h3>
+            <div style="font-size: 13px; color: #cfc2b0">$150 · Glow $199</div>
+            <button type="button" onClick="{{addOne}}" style="margin-top: 6px; min-height: 44px; border-radius: 999px; border: 1px solid #6b5a43; background: transparent; color: #f1e9dd; font-weight: 600; font-size: 14px; cursor: pointer">Choose</button>
+          </div>
+        </article>
+      </sc-if>
+      <sc-if value="{{show.grey}}" hint-placeholder-val="{{ true }}">
+        <article style="background: #211b15; border: 1px solid #3a3027; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+          <div style="aspect-ratio: 4 / 5; position: relative; overflow: hidden; background: #0f0c0a">
+            <sc-if value="{{isDay}}" hint-placeholder-val="{{ true }}"><img src="/_blob/0ca6da5117241e596120660218b0237a" alt="Soft Grey Herringbone throw with Stay Encouraged embroidery" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+            <sc-if value="{{isNight}}" hint-placeholder-val="{{ false }}"><img src="/_blob/05cc45ccfc5c0f047487c7965c34ca4f" alt="Soft Grey Herringbone throw, message glowing in the dark" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+          </div>
+          <div style="padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; flex: 1">
+            <div style="color: {{accent}}; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Herringbone</div>
+            <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 15px; line-height: 1.3">Soft Grey Herringbone</h3>
+            <div style="font-size: 13px; color: #cfc2b0">$150 · Glow $199</div>
+            <button type="button" onClick="{{addOne}}" style="margin-top: 6px; min-height: 44px; border-radius: 999px; border: 1px solid #6b5a43; background: transparent; color: #f1e9dd; font-weight: 600; font-size: 14px; cursor: pointer">Choose</button>
+          </div>
+        </article>
+      </sc-if>
+      <sc-if value="{{show.rust}}" hint-placeholder-val="{{ true }}">
+        <article style="background: #211b15; border: 1px solid #3a3027; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+          <div style="aspect-ratio: 4 / 5; position: relative; overflow: hidden; background: #0f0c0a">
+            <sc-if value="{{isDay}}" hint-placeholder-val="{{ true }}"><img src="/_blob/6cb809a14eacc1762a56829a6abdcee9" alt="Rust-Brown Cable-Knit throw with Stay Encouraged embroidery" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+            <sc-if value="{{isNight}}" hint-placeholder-val="{{ false }}"><img src="/_blob/6cb809a14eacc1762a56829a6abdcee9" alt="Rust-Brown Cable-Knit throw" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.3) saturate(0.6)"><span style="position: absolute; left: 8px; right: 8px; bottom: 8px; background: rgba(0,0,0,0.7); color: #f0d389; font-size: 11px; padding: 5px 8px; border-radius: 6px; text-align: center">Glow photo needed</span></sc-if>
+          </div>
+          <div style="padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; flex: 1">
+            <div style="color: {{accent}}; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Cable-Knit</div>
+            <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 15px; line-height: 1.3">Rust-Brown Cable-Knit</h3>
+            <div style="font-size: 13px; color: #cfc2b0">$150 · Glow $199</div>
+            <button type="button" onClick="{{addOne}}" style="margin-top: 6px; min-height: 44px; border-radius: 999px; border: 1px solid #6b5a43; background: transparent; color: #f1e9dd; font-weight: 600; font-size: 14px; cursor: pointer">Choose</button>
+          </div>
+        </article>
+      </sc-if>
+      <sc-if value="{{show.olive}}" hint-placeholder-val="{{ true }}">
+        <article style="background: #211b15; border: 1px solid #3a3027; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+          <div style="aspect-ratio: 4 / 5; position: relative; overflow: hidden; background: #0f0c0a">
+            <sc-if value="{{isDay}}" hint-placeholder-val="{{ true }}"><img src="/_blob/2001bbef9e4457b32ba327f7ef60ac60" alt="Olive Green Bobble throw with Stay Encouraged embroidery" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+            <sc-if value="{{isNight}}" hint-placeholder-val="{{ false }}"><img src="/_blob/2001bbef9e4457b32ba327f7ef60ac60" alt="Olive Green Bobble throw" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.3) saturate(0.6)"><span style="position: absolute; left: 8px; right: 8px; bottom: 8px; background: rgba(0,0,0,0.7); color: #f0d389; font-size: 11px; padding: 5px 8px; border-radius: 6px; text-align: center">Glow photo needed</span></sc-if>
+          </div>
+          <div style="padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; flex: 1">
+            <div style="color: {{accent}}; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Bobble</div>
+            <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 15px; line-height: 1.3">Olive Green Bobble</h3>
+            <div style="font-size: 13px; color: #cfc2b0">$150 · Glow $199</div>
+            <button type="button" onClick="{{addOne}}" style="margin-top: 6px; min-height: 44px; border-radius: 999px; border: 1px solid #6b5a43; background: transparent; color: #f1e9dd; font-weight: 600; font-size: 14px; cursor: pointer">Choose</button>
+          </div>
+        </article>
+      </sc-if>
+      <sc-if value="{{show.ivory}}" hint-placeholder-val="{{ true }}">
+        <article style="background: #211b15; border: 1px solid #3a3027; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+          <div style="aspect-ratio: 4 / 5; position: relative; overflow: hidden; background: #0f0c0a">
+            <sc-if value="{{isDay}}" hint-placeholder-val="{{ true }}"><img src="/_blob/b0a0ad799867c4cfe26c7b5b7910f8c1" alt="Ivory Honeycomb throw with Stay Encouraged embroidery" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+            <sc-if value="{{isNight}}" hint-placeholder-val="{{ false }}"><img src="/_blob/b0a0ad799867c4cfe26c7b5b7910f8c1" alt="Ivory Honeycomb throw" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.3) saturate(0.6)"><span style="position: absolute; left: 8px; right: 8px; bottom: 8px; background: rgba(0,0,0,0.7); color: #f0d389; font-size: 11px; padding: 5px 8px; border-radius: 6px; text-align: center">Glow photo needed</span></sc-if>
+          </div>
+          <div style="padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; flex: 1">
+            <div style="color: {{accent}}; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Honeycomb</div>
+            <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 15px; line-height: 1.3">Ivory Honeycomb</h3>
+            <div style="font-size: 13px; color: #cfc2b0">$150 · Glow $199</div>
+            <button type="button" onClick="{{addOne}}" style="margin-top: 6px; min-height: 44px; border-radius: 999px; border: 1px solid #6b5a43; background: transparent; color: #f1e9dd; font-weight: 600; font-size: 14px; cursor: pointer">Choose</button>
+          </div>
+        </article>
+      </sc-if>
+      <sc-if value="{{show.mustard}}" hint-placeholder-val="{{ true }}">
+        <article style="background: #211b15; border: 1px solid #3a3027; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+          <div style="aspect-ratio: 4 / 5; position: relative; overflow: hidden; background: #0f0c0a">
+            <sc-if value="{{isDay}}" hint-placeholder-val="{{ true }}"><img src="/_blob/8f4c7b647f27c2dc13b9af607d74b7a9" alt="Golden Mustard Basket-Weave throw with Stay Encouraged embroidery" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+            <sc-if value="{{isNight}}" hint-placeholder-val="{{ false }}"><img src="/_blob/8f4c7b647f27c2dc13b9af607d74b7a9" alt="Golden Mustard Basket-Weave throw" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.3) saturate(0.6)"><span style="position: absolute; left: 8px; right: 8px; bottom: 8px; background: rgba(0,0,0,0.7); color: #f0d389; font-size: 11px; padding: 5px 8px; border-radius: 6px; text-align: center">Glow photo needed</span></sc-if>
+          </div>
+          <div style="padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; flex: 1">
+            <div style="color: {{accent}}; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Basket-Weave</div>
+            <h3 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 15px; line-height: 1.3">Golden Mustard Basket-Weave</h3>
+            <div style="font-size: 13px; color: #cfc2b0">$150 · Glow $199</div>
+            <button type="button" onClick="{{addOne}}" style="margin-top: 6px; min-height: 44px; border-radius: 999px; border: 1px solid #6b5a43; background: transparent; color: #f1e9dd; font-weight: 600; font-size: 14px; cursor: pointer">Choose</button>
+          </div>
+        </article>
+      </sc-if>
+    </div>
+    <sc-if value="{{showMore}}" hint-placeholder-val="{{ true }}">
+      <button type="button" onClick="{{showAll}}" style="margin-top: 14px; width: 100%; min-height: 48px; border-radius: 999px; border: 1px solid #6b5a43; background: transparent; color: #f1e9dd; font-weight: 600; font-size: 15px">See all 7 throws</button>
+    </sc-if>
+  </section>
+
+  <section style="margin: 36px 20px 0; background: #1d1813; border: 1px solid #3a3027; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 12px">
+    <div style="aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; margin: -6px -6px 4px"><img src="/_blob/851ca8fcceb2b52deeb04032ad70cf6c" alt="A glowing throw beside a gift box" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+    <div style="color: {{accent}}; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600">Custom &amp; corporate</div>
+    <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 24px; line-height: 1.2">Your words, glowing. For one person or your whole team.</h2>
+    <p style="margin: 0; color: #cfc2b0; font-size: 15px; line-height: 1.5">Custom embroidery and bulk gifting from [YOUR BULK PRICE] each at [MIN QTY]+.</p>
+    <a href="#quote" style="min-height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: {{accent}}; color: #1b160f; font-weight: 700; text-decoration: none">Request a quote</a>
+    <a href="sms:+17702568995" style="min-height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 999px; border: 1px solid #6b5a43; color: #f1e9dd; font-weight: 600; text-decoration: none">Text Jinetta, the founder</a>
+  </section>
+
+  <section style="margin: 28px 20px 0">
+    <h2 style="margin: 0 0 12px; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 24px">Kind words from real customers</h2>
+    <figure style="margin: 0; background: #211b15; border: 1px solid #3a3027; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+      <blockquote style="margin: 0; font-size: 15px; line-height: 1.55; color: #e3d7c6">[Real Google review text]</blockquote>
+      <figcaption style="font-size: 13px; color: #b9ab98">[First name, initial] · via Google</figcaption>
+    </figure>
+  </section>
+
+  <form aria-label="Join the Glow Club" style="margin: 28px 20px 0; background: {{accent}}; color: #1b160f; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 10px">
+    <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 500; font-size: 24px">15% off your first throw</h2>
+    <label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600">Email address<input type="email" name="email" style="min-height: 48px; border-radius: 999px; border: 1px solid #1b160f; background: #fff8e8; color: #1b160f; padding: 0 16px"></label>
+    <button type="submit" style="min-height: 48px; border-radius: 999px; border: none; background: #1b160f; color: #f1e9dd; font-weight: 700">Get my 15%</button>
+  </form>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#e8c26a","options":["#e8c26a","#f0b15a","#d9c08a"]},"startInGlow":{"editor":"boolean","default":false},"$preview":{"width":390,"height":3000}}'>
+var GOE_M_PRODUCTS = [
+  { id: 'black', short: 'Black Herringbone', texture: 'Herringbone', color: '#1c1b1d', thread: '#f1ece2' },
+  { id: 'charcoal', short: 'Dark Charcoal Herringbone', texture: 'Herringbone', color: '#3b3c40', thread: '#efe6d2' },
+  { id: 'grey', short: 'Soft Grey Herringbone', texture: 'Herringbone', color: '#a29d95', thread: '#b8860b' },
+  { id: 'rust', short: 'Rust-Brown Cable-Knit', texture: 'Cable-Knit', color: '#8b4a2b', thread: '#f3ead8' },
+  { id: 'olive', short: 'Olive Green Bobble', texture: 'Bobble', color: '#6e7445', thread: '#e7bf62' },
+  { id: 'ivory', short: 'Ivory Honeycomb', texture: 'Honeycomb', color: '#e8e0cd', thread: '#a8916a' },
+  { id: 'mustard', short: 'Golden Mustard Basket-Weave', texture: 'Basket-Weave', color: '#c4952f', thread: '#fbf5e8' }
+];
+var GOE_M_PATTERNS = {
+  'Herringbone': { layers: 'repeating-linear-gradient(45deg, rgba(255,255,255,0.07) 0 5px, transparent 5px 10px), repeating-linear-gradient(-45deg, rgba(0,0,0,0.14) 0 5px, transparent 5px 10px)', size: 'auto' },
+  'Cable-Knit': { layers: 'repeating-linear-gradient(90deg, rgba(0,0,0,0.2) 0 3px, transparent 3px 20px), repeating-linear-gradient(60deg, rgba(255,255,255,0.08) 0 4px, transparent 4px 12px)', size: 'auto' },
+  'Bobble': { layers: 'radial-gradient(circle, rgba(255,255,255,0.16) 2px, transparent 3px)', size: '10px 10px' },
+  'Honeycomb': { layers: 'radial-gradient(circle, transparent 3px, rgba(0,0,0,0.1) 4px, transparent 5px)', size: '12px 12px' },
+  'Basket-Weave': { layers: 'repeating-linear-gradient(0deg, rgba(0,0,0,0.13) 0 3px, transparent 3px 10px), repeating-linear-gradient(90deg, rgba(255,255,255,0.09) 0 3px, transparent 3px 10px)', size: 'auto' }
+};
+function goeMLook(p, night) {
+  var pat = GOE_M_PATTERNS[p.texture];
+  var shade = night ? 'linear-gradient(rgba(6,8,12,0.84), rgba(6,8,12,0.84)), ' : '';
+  return {
+    bg: shade + pat.layers + ', ' + p.color,
+    bgSize: night ? 'auto, ' + pat.size : pat.size,
+    textStyle: night
+      ? 'color: #fff1b8; text-shadow: 0 0 8px rgba(255,214,120,0.95), 0 0 20px rgba(255,200,90,0.6);'
+      : 'color: ' + p.thread + '; text-shadow: 0 1px 1px rgba(0,0,0,0.25);'
+  };
+}
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { night: null, filter: 'All', bag: 0, all: false };
+  }
+  renderVals() {
+    var self = this;
+    var accent = this.props.accent ?? '#e8c26a';
+    var night = this.state.night === null ? (this.props.startInGlow ?? false) : this.state.night;
+    var filter = this.state.filter;
+    var on = 'background: ' + accent + '; color: #1b160f;';
+    var off = 'background: transparent; color: #e3d7c6;';
+    var chips = ['All', 'Herringbone', 'Cable-Knit', 'Honeycomb', 'Basket-Weave', 'Bobble'].map(function (label) {
+      var sel = label === filter;
+      return {
+        label: label,
+        pressed: sel ? 'true' : 'false',
+        style: sel ? 'background: ' + accent + '; color: #1b160f; border: 1px solid ' + accent + ';' : 'background: #211b15; color: #e3d7c6; border: 1px solid #4a3e31;',
+        pick: function () { self.setState({ filter: label }); }
+      };
+    });
+    var list = GOE_M_PRODUCTS.filter(function (p) { return filter === 'All' || p.texture === filter; });
+    var limited = filter === 'All' && !this.state.all;
+    var shown = (limited ? list.slice(0, 4) : list).map(function (p) {
+      return Object.assign({}, p, goeMLook(p, night), { add: function () { self.setState({ bag: self.state.bag + 1 }); } });
+    });
+    return {
+      accent: accent,
+      bag: this.state.bag,
+      hero: goeMLook(GOE_M_PRODUCTS[0], night),
+      dayPressed: night ? 'false' : 'true',
+      nightPressed: night ? 'true' : 'false',
+      dayBtn: night ? off : on,
+      nightBtn: night ? on : off,
+      setDay: function () { self.setState({ night: false }); },
+      setNight: function () { self.setState({ night: true }); },
+      isDay: !night,
+      isNight: night,
+      show: { black: (filter === 'All' || filter === 'Herringbone') && (!limited || 0 < 4), charcoal: (filter === 'All' || filter === 'Herringbone') && (!limited || 1 < 4), grey: (filter === 'All' || filter === 'Herringbone') && (!limited || 2 < 4), rust: (filter === 'All' || filter === 'Cable-Knit') && (!limited || 3 < 4), olive: (filter === 'All' || filter === 'Bobble') && (!limited || 4 < 4), ivory: (filter === 'All' || filter === 'Honeycomb') && (!limited || 5 < 4), mustard: (filter === 'All' || filter === 'Basket-Weave') && (!limited || 6 < 4) },
+      addOne: function () { self.setState({ bag: self.state.bag + 1 }); },
+      chips: chips,
+      shown: shown,
+      showMore: limited,
+      showAll: function () { self.setState({ all: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
